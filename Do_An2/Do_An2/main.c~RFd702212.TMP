@@ -1,0 +1,78 @@
+#include <avr/io.h>
+#include "delay.h"
+#include "LCD_4bits.h"
+#include <stdio.h>
+#include "DHT11.h"
+#define FRE	8 
+
+float temp = 0;
+float humi = 0;
+int m, n;
+
+int main(void)
+{
+
+
+	DDRD |= 0xFF;
+	PORTD |= 0xAA;
+	DDRC |= 0xFF;
+	PORTC |= 0x00;
+	
+/*
+	INIT(); 
+	PORT(); 
+	LCD_Init();
+	LCD_Gotoxy(0, 0);
+	LCD_Puts("Le Chi Tuyen ");
+	LCD_Gotoxy(0, 1);
+	LCD_Puts("MSSV - 20193191");
+	delay_ms(3000);
+
+	while (1)
+	{
+		DHT11_Read_Data(&humi, &temp);
+
+		m = humi * 10;
+		n = temp * 10;
+
+		LCD_Gotoxy(0, 0);
+		LCD_Puts("HUMI: ");
+		LCD_PutChar(m / 100 + 48);
+		LCD_PutChar((m % 100) / 10 + 48);
+		LCD_PutChar('.');
+		LCD_PutChar(m % 10 + 48);
+		LCD_Puts(" %    ");
+
+		LCD_Gotoxy(0, 1);
+		LCD_Puts("TEMP: ");
+		LCD_PutChar(n / 100 + 48);
+		LCD_PutChar((n % 100) / 10 + 48);
+		LCD_PutChar('.');
+		LCD_PutChar(n % 10 + 48);
+		LCD_Puts(" *C   ");
+		delay_ms(500);
+	}
+*/
+// G?i hàm INIT() trong file thu_vien_rieng.h ?? kh?i t?o
+
+INIT();
+
+
+
+// T?m vô hi?u hóa hàm PORT()
+
+PORT();
+
+
+
+// G?i hàm PB_2_LED() trong file thu_vien_rieng.h
+
+PB_2_LED();
+
+
+
+// L?nh return luôn xu?t hi?n ? cu?i hàm main()
+
+return 0;
+
+}
